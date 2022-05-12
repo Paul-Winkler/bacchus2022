@@ -1,0 +1,27 @@
+{
+  "round": 2,
+  "yellow": {
+    "name": "Robert Weil Riesling",
+    "origin": "Deutschland",
+    "price": 15.5,
+    "link": "https://www.edelrausch.de/weingut-robert-weil-riesling-trocken-2020",
+    "img": "",
+    "grape": "Riesling",
+    "region": "Rheingau",
+    "year": 2020,
+    "choosenBy": [
+      "Winkler6-Paul"
+    ]
+  },
+  "blue": {
+    "name": "Riesling QbA trocken",
+    "origin": "Deutschland",
+    "price": 3.99,
+    "link": "https://www.lidl.de/p/rheingau-riesling-qba-trocken-weisswein-2020/p100238743",
+    "img": "",
+    "grape": "Riesling",
+    "region": "Rheingau",
+    "year": 2020,
+    "choosenBy": []
+  }
+}

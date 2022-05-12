@@ -1,0 +1,25 @@
+{
+  "round": 5,
+  "yellow": {
+    "name": "Southern Hills Cabernet Sauvignon",
+    "origin": "USA",
+    "price": 11.90,
+    "link": "https://www.vivino.com/wente-vineyards-southern-hills-cabernet-sauvignon/w/1724275?year=2017",
+    "img": "",
+    "grape": "Cabernet Sauvignon",
+    "region": "Californien",
+    "year": 2017,
+    "choosenBy": []
+  },
+  "blue": {
+    "name": "",
+    "origin": "USA",
+    "price": 3.99,
+    "link": "https://vinoteca.aldi-suisse.ch/rotwein/burlwood-cabernet-sauvignon/",
+    "img": "",
+    "grape": "Cabernet Sauvignon",
+    "region": "Californien",
+    "year": 2017,
+    "choosenBy": []
+  }
+}

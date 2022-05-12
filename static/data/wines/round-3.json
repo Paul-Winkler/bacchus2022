@@ -1,0 +1,27 @@
+{
+  "round": 3,
+  "yellow": {
+    "name": "Springfield Estate Life from Stone",
+    "origin": "Südafrika",
+    "price": 12.95,
+    "link": "https://www.gute-weine.de/produkt/sauvignon-blanc-life-from-stone-41618h/",
+    "img": "",
+    "grape": "Sauvignon Blanc",
+    "region": "Südafrika",
+    "year": 2020,
+    "choosenBy": []
+  },
+  "blue": {
+    "name": "Cimarosa Souvignon Blanc trocken",
+    "origin": "Südafrika",
+    "price": 3.69,
+    "link": "https://www.lidl.de/p/cimarosa-sauvignon-blanc-sudafrika-trocken-weisswein-2020/p100075406",
+    "img": "",
+    "grape": "Sauvignon Blanc",
+    "region": "Südafrika",
+    "year": 2020,
+    "choosenBy": [
+      "Winkler6-Paul"
+    ]
+  }
+}

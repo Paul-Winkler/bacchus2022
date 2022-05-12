@@ -1,0 +1,27 @@
+{
+  "round": 4,
+  "yellow": {
+    "name": "Mario Giacondi Merlot",
+    "origin": "Italien",
+    "price": 2.29,
+    "link": "https://www.aldi-sued.de/de/sortiment/getraenke/alkoholische-getraenke/rotweine/detailseite/ps/p/giacondi-nero-davola-merlot-sicilia-doc-1/",
+    "img": "",
+    "grape": "Merlot",
+    "region": "Sizilien",
+    "year": 2018,
+    "choosenBy": [
+      "Winkler6-Paul"
+    ]
+  },
+  "blue": {
+    "name": "Cusumano Merlot",
+    "origin": "Italien",
+    "price": 7.9,
+    "link": "https://www.vicampo.de/cusumano-merlot-igp",
+    "img": "",
+    "grape": "Merlot",
+    "region": "Sizilien",
+    "year": 2018,
+    "choosenBy": []
+  }
+}

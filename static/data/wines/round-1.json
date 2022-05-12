@@ -1,0 +1,28 @@
+{
+  "round": 1,
+  "yellow": {
+    "name": "Prosecco Superiore",
+    "origin": "Italien",
+    "price": 4.99,
+    "link": "https://www.aldi-sued.de/de/sortiment/weihnachtssortiment/weine-und-spirituosen-zu-weihnachten/detailseite/ps/p/prosecco-spumante-superiore-valdobbiadene-docg-4/",
+    "img": "",
+    "grape": "Prosecco",
+    "region": "Valdobbiadene",
+    "year": 2020,
+    "choosenBy": []
+  },
+  "blue": {
+    "name": "Sior Piero Prosecco Extra Dry DOC",
+    "origin": "Italien",
+    "price": 15.2,
+    "link": "https://www.belvini.de/v8-sior-piero-valdobbiadene-prosecco-extra-dry-doc.html",
+    "img": "",
+    "grape": "Prosecco",
+    "region": "Valdobbiadene",
+    "year": 2020,
+    "choosenBy": [
+      "Winkler-Paul",
+      "Winkler6-Paul"
+    ]
+  }
+}
