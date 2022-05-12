@@ -9,9 +9,7 @@
     "grape": "Riesling",
     "region": "Rheingau",
     "year": 2020,
-    "choosenBy": [
-      "Winkler6-Paul"
-    ]
+    "choosenBy": []
   },
   "blue": {
     "name": "Riesling QbA trocken",
@@ -22,6 +20,7 @@
     "grape": "Riesling",
     "region": "Rheingau",
     "year": 2020,
-    "choosenBy": []
+    "choosenBy": [
+    ]
   }
 }

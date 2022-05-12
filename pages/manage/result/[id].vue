@@ -7,28 +7,59 @@ definePageMeta({
 
 const contentID = ref(0);
 const roundID = parseInt(useRoute().params.id as string);
-
-const { data } = await useAsyncData('tastings', () => $fetch('/api/round?id='+roundID))
-const round = JSON.parse(data.value as string) as Round;
-
 const roundCookie = useCookie("round");
 
-const chartData = ref({
-  labels: [ 'Wein mit gelbem Punkt', 'Wein mit blauem Punkt'],
-  datasets: [ 
-  { 
-    label: 'Anzahl der Stimmen',
-    data: [
-      round.yellow.choosenBy.length,
-      round.blue.choosenBy.length
-    ],
-    backgroundColor: [
-      '#E1CC0F',
-      '#0790F1',
-    ],
-  } 
-  ]
-})
+const round = ref<Round>(null);
+const chartData = ref<any>(null);
+
+onMounted(() => {
+  try {
+    fetchRound();
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+async function fetchRound() {
+  try {
+    const headers = new Headers();
+    headers.append('pragma', 'no-cache');
+    headers.append('cache-control', 'no-cache');
+
+    const res = await fetch('/api/round?id='+roundID, { method: "GET", headers: headers })
+    
+    if (res.status == 200) {
+      round.value = await res.json() as Round;
+
+      updateChartData()
+    } else {
+      const err = await res.json();
+
+      console.error("Invalid respond while fetching round from manage/result/id", err);
+    }
+  } catch (err) {
+    console.error("Failed to fetch round from manage/result/id", err);
+  }
+}
+
+function updateChartData() {
+  chartData.value = {
+    labels: [ 'Wein mit gelbem Punkt', 'Wein mit blauem Punkt'],
+    datasets: [ 
+      { 
+        label: 'Anzahl der Stimmen',
+        data: [
+          round.value.yellow.choosenBy.length,
+          round.value.blue.choosenBy.length
+        ],
+        backgroundColor: [
+          '#E1CC0F',
+          '#0790F1',
+        ],
+      } 
+    ]
+  }
+}
 
 let yellowIsPremium: boolean | undefined;
 let premiumWine: Wine | undefined;
@@ -36,16 +67,16 @@ let discounterWine: Wine | undefined;
 
 function revealWines() {
   if (contentID.value == 0) {
-    yellowIsPremium = round.yellow.price > round.blue.price;
+    yellowIsPremium = round.value.yellow.price > round.value.blue.price;
 
     if (yellowIsPremium) {
       chartData.value.labels = ["Premiumwein", "Discounterwein"];
-      premiumWine = round.yellow;
-      discounterWine = round.blue
+      premiumWine = round.value.yellow;
+      discounterWine = round.value.blue
     } else {
       chartData.value.labels = ["Discounterwein", "Premiumwein"];
-      premiumWine = round.blue;
-      discounterWine = round.yellow
+      premiumWine = round.value.blue;
+      discounterWine = round.value.yellow
     }
   } else if (contentID.value == 5) {
     roundCookie.value = ""+(parseInt(roundCookie.value)+1);
@@ -65,7 +96,7 @@ function revealWines() {
 
     <h2>Ergebnisse der {{roundID}}. Runde</h2>
 
-    <div class="flex-container">
+    <div class="flex-container" v-if="chartData">
       <div class="color-container">
         <h3>Verteilung der Stimmen</h3>
         <div class="chart-container">

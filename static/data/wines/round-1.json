@@ -9,7 +9,8 @@
     "grape": "Prosecco",
     "region": "Valdobbiadene",
     "year": 2020,
-    "choosenBy": []
+    "choosenBy": [
+    ]
   },
   "blue": {
     "name": "Sior Piero Prosecco Extra Dry DOC",
@@ -21,8 +22,6 @@
     "region": "Valdobbiadene",
     "year": 2020,
     "choosenBy": [
-      "Winkler-Paul",
-      "Winkler6-Paul"
     ]
   }
 }
