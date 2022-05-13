@@ -16,7 +16,7 @@ const success = ref(false);
 const validateName = (name: string) => name.split(" ").length === 2 && name.split(' ')[1].length > 2;
 
 async function handleForm(event: SubmitEvent) {
-  const setError = (err) => {
+  const setError = (err: string) => {
     error.value = err;
     console.warn('Failed to submit form due to error: ', err);
   };
@@ -61,7 +61,7 @@ async function handleForm(event: SubmitEvent) {
   
     <section>
       <p>Um sich als Teilnehmer für das heutige Event zu registrieren, füllen Sie bitte das folgende Formular aus.</p>
-      <p>Ihr Pseudonym wird am Ende des Events auf der Bestenliste erscheinen.</p>
+      <p>Ihr Name wird nicht veröffentlicht, wir benötigen ihn ausschließlich zur identifikation mit den Nutzerdaten.</p>
     </section>
 
     <h3>Formular</h3>
@@ -73,6 +73,7 @@ async function handleForm(event: SubmitEvent) {
 
     <form @submit.prevent="handleForm">
       <InputText title="Ihr Name" placeholder="Max Mustermann" entry-name="name" :validate="validateName" />
+      <br>
       <button type="submit">Daten abschicken</button>
     </form>
 

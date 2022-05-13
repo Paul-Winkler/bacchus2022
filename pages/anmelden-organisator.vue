@@ -74,7 +74,7 @@ async function handleForm(event: SubmitEvent) {
     <form @submit.prevent="handleForm">
       <InputText title="Ihr Name" placeholder="Max Mustermann" entry-name="name" :validate="validateName" />
       <InputPassword title="Passwort" placeholder="********" entry-name="passwd" />
-
+      <br>
       <button type="submit">Daten abschicken</button>
     </form>
 

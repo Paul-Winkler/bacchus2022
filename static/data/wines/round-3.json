@@ -9,7 +9,8 @@
     "grape": "Sauvignon Blanc",
     "region": "Südafrika",
     "year": 2020,
-    "choosenBy": []
+    "choosenBy": [
+    ]
   },
   "blue": {
     "name": "Cimarosa Souvignon Blanc trocken",
@@ -20,7 +21,6 @@
     "grape": "Sauvignon Blanc",
     "region": "Südafrika",
     "year": 2020,
-    "choosenBy": [
-    ]
+    "choosenBy": []
   }
 }

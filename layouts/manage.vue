@@ -35,6 +35,7 @@ if (managerCookie.value !== true) useRouter().push('/');
   
   margin: 0;
   text-align: center;
+  overflow-x: hidden;
 }
 
 #a {

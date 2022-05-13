@@ -70,15 +70,18 @@ function revealWines() {
     yellowIsPremium = round.value.yellow.price > round.value.blue.price;
 
     if (yellowIsPremium) {
-      chartData.value.labels = ["Premiumwein", "Discounterwein"];
+      chartData.value.labels = ["Winzerwein", "Discounterwein"];
+      chartData.value.datasets[0].backgroundColor = ["#2ECC40", "#FF851B"];
+        
       premiumWine = round.value.yellow;
       discounterWine = round.value.blue
     } else {
-      chartData.value.labels = ["Discounterwein", "Premiumwein"];
+      chartData.value.labels = ["Discounterwein", "Winzerwein"];
+      chartData.value.datasets[0].backgroundColor = ["#FF851B", "#2ECC40"];
       premiumWine = round.value.blue;
       discounterWine = round.value.yellow
     }
-  } else if (contentID.value == 5) {
+  } else if (contentID.value == 6) {
     roundCookie.value = ""+(parseInt(roundCookie.value)+1);
 
     useRouter().push("/manage");
@@ -100,14 +103,14 @@ function revealWines() {
       <div class="color-container">
         <h3>Verteilung der Stimmen</h3>
         <div class="chart-container">
-          <ChartsWineSelected chart-id="colors" :chart-data="chartData" />
+          <WineChart chart-id="colors" :chart-data="chartData" />
         </div>
       </div>
 
       <div class="wine-one" v-if="contentID >= 1">
         <div class="title">
           <img src="~/assets/images/wine-bottle-yellow.png" alt="Wine Bottle Icon" class="icon">
-          <h3>{{ yellowIsPremium ?  "Premiumwein" : "Discounterwein" }}</h3>
+          <h3>{{ yellowIsPremium ?  "Winzerwein" : "Discounterwein" }}</h3>
           <img :src="`/img/round-${roundID}/yellow.png`" alt="Wine Bottle Icon" height="100">
         </div>
 
@@ -127,6 +130,11 @@ function revealWines() {
         </div>
 
         <div class="info" v-if="contentID >= 5">
+          <p class="bold">Preis:</p>
+          <p class="data">EUR {{ round.yellow.price }}</p>
+        </div>
+
+        <div class="info" v-if="contentID >= 6">
           <p class="bold">Name:</p>
           <p class="data">{{ round.yellow.name }}</p>
         </div>
@@ -135,7 +143,7 @@ function revealWines() {
       <div class="wine-two"  v-if="contentID >= 1">
         <div class="title">
           <img src="~/assets/images/wine-bottle-blue.png" alt="Wine Bottle Icon" class="icon">
-          <h3>{{ !yellowIsPremium ?  "Premiumwein" : "Discounterwein" }}</h3>
+          <h3>{{ !yellowIsPremium ?  "Winzerwein" : "Discounterwein" }}</h3>
           <img :src="`/img/round-${roundID}/blue.png`" alt="Wine Bottle Icon" height="100">
         </div>
 
@@ -155,13 +163,18 @@ function revealWines() {
         </div>
 
         <div class="info" v-if="contentID >= 5">
+          <p class="bold">Preis:</p>
+          <p class="data">EUR {{ round.blue.price }}</p>
+        </div>
+
+        <div class="info" v-if="contentID >= 6">
           <p class="bold">Name:</p>
           <p class="data">{{ round.blue.name }}</p>
         </div>
       </div>
     </div>
 
-    <button @click="revealWines">{{ contentID == 0 ? "Weine bekanntgeben" : contentID > 0 && contentID < 5 ? "Nächste Eigenschaft anzeigen" : "Runde abschließen" }} </button>
+    <button @click="revealWines">{{ contentID == 0 ? "Weine bekanntgeben" : contentID > 0 && contentID < 6 ? "Nächste Eigenschaft anzeigen" : "Runde abschließen" }} </button>
   </div>
 </template>
 
@@ -186,6 +199,10 @@ function revealWines() {
   display: flex;
   justify-content: space-around;
   animation: fadeIn 0.5s ease;
+}
+
+.color-container, .wine-one, .wine-two {
+  margin: 0 5rem;
 }
 
 .icon {

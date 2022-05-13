@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-Light.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Inter'; 
+  src: url('/fonts/inter/Inter-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Inter'; 
+  src: url('/fonts/inter/Inter-Medium.ttf');
+  font-weight: 500;
+}
+
 /* Color palette */
 :root {
   --blue: #50A8EA;

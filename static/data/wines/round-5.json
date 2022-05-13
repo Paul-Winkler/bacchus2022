@@ -10,11 +10,10 @@
     "region": "Californien",
     "year": 2017,
     "choosenBy": [
-      "Winkler-Paul"
     ]
   },
   "blue": {
-    "name": "",
+    "name": "Cabernet Sauvignon Barlwood",
     "origin": "USA",
     "price": 3.99,
     "link": "https://vinoteca.aldi-suisse.ch/rotwein/burlwood-cabernet-sauvignon/",
@@ -22,6 +21,7 @@
     "grape": "Cabernet Sauvignon",
     "region": "Californien",
     "year": 2017,
-    "choosenBy": []
+    "choosenBy": [
+    ]
   }
 }

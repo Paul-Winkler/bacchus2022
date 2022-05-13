@@ -43,7 +43,7 @@ const tasting = JSON.parse(data.value as string) as Round;
 
           <p class="data"><b>Name:</b> {{ tasting.blue.name }}</p>
           <p class="data"><b>Herkunft:</b> {{ tasting.blue.origin }}</p>
-          <p class="data"><b>Preis:</b> {{ tasting.blue.price }}</p>
+          <p class="data"><b>Preis:</b> EUR {{ tasting.blue.price }}</p>
           <p class="data" v-if="tasting.blue.link"><b>Weitere Infos:</b> <a :href="tasting.blue.link" target="_blank">Shop aufrufen</a></p>
         </WelcomeInfo>
       </div>
@@ -56,7 +56,7 @@ const tasting = JSON.parse(data.value as string) as Round;
 
           <p class="data"><b>Name:</b> {{ tasting.yellow.name }}</p>
           <p class="data"><b>Herkunft:</b> {{ tasting.yellow.origin }}</p>
-          <p class="data"><b>Preis:</b> {{ tasting.yellow.price }}</p>
+          <p class="data"><b>Preis:</b> EUR {{ tasting.yellow.price }}</p>
           <p class="data" v-if="tasting.yellow.link"><b>Weitere Infos:</b> <a :href="tasting.yellow.link" target="_blank">Shop aufrufen</a></p>
         </WelcomeInfo>
       </div>

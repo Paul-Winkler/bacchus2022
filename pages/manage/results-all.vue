@@ -21,28 +21,45 @@ for (let i = 0; i < rounds.length; ++i) {
   }
 }
 
-discounterCounts.unshift(discounterCounts.reduce((pv, cv) => pv + cv, 0));
-premiumCounts.unshift(premiumCounts.reduce((pv, cv) => pv + cv, 0));
-
 const chartDatas = [];
 for (let i = 0; i < discounterCounts.length; ++i) {
   chartDatas.push({
-    labels: [ 'Discounterwein', 'Premiumwein'],
-    datasets: [ 
-    { 
+    labels: [ 'Discounterwein', 'Winzerwein'],
+    datasets: [{ 
       label: 'Anzahl der Stimmen',
       data: [
         discounterCounts[i],
         premiumCounts[i]
       ],
       backgroundColor: [
-        '#F5B332',
-        '#5CB3A6',
+        '#FF851B',
+        '#2ECC40',
       ],
-    } 
-    ]
+    }]
   })
 }
+
+const dicounterAll = discounterCounts.reduce((pv, cv) => pv + cv, 0);
+const premiumAll = premiumCounts.reduce((pv, cv) => pv + cv, 0);
+
+const chartData = {
+  labels: [ 'Discounterwein', 'Winzerwein'],
+  datasets: [{ 
+    label: 'Anzahl der Stimmen',
+    data: [
+      dicounterAll,
+      premiumAll
+    ],
+    backgroundColor: [
+      '#FF851B',
+      '#2ECC40',
+    ],
+  }]
+}
+
+const ready = ref(false);
+
+onMounted(() => ready.value = true);
 </script>
 
 <template>
@@ -53,11 +70,18 @@ for (let i = 0; i < discounterCounts.length; ++i) {
 
     <h2>Gesamtübersicht</h2>
 
-    <ul class="flex-container">
+    <div class="all-results" v-if="ready">
+      <h3>Ergebnisse aller Runden zusammengefasst</h3>
+      <div class="chart-container summary">
+          <WineChart chart-id="all" :chart-data="chartData" />
+        </div>
+    </div>
+
+    <ul class="flex-container" v-if="ready">
       <li v-for="(chartData, ind) in chartDatas" :key="ind">
-        <h3>{{ ind == 0 ? "Gesamtwertung" : `Ergebnis der ${ind}. Runde` }}</h3>
+        <h3>Ergebnis der {{ind+1}}. Runde</h3>
         <div class="chart-container">
-          <ChartsWineSelected :chart-id="ind" :chart-data="chartData" />
+          <WineChart :chart-id="ind" :chart-data="chartData" />
         </div>
       </li>
     </ul>
@@ -66,33 +90,40 @@ for (let i = 0; i < discounterCounts.length; ++i) {
 
 <style scoped>
 .center {
-  position: absolute;
+  /* position: absolute;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); */
+}
+
+.all-results {
+  margin: 2rem auto;
+}
+
+.summary {
+  margin: 0 auto !important;
+  width: 300px !important;
+  height: 300px !important;
 }
 
 .flex-container {
   display: flex;
   width: 100vw;
   overflow: scroll;
+  padding: 0;
+  
+  position: absolute;
+  left: 0;
 } 
 
 .chart-container {
   margin: 2rem;
-  width: 300px;
-  height: 300px;
+  width: 220px;
+  height: 220px;
 }
 
 ul {
   list-style: none;
 }
 
-li:first-of-type {
-  margin-left: 2.5rem;
-}
-
-li:last-of-type {
-  margin-right: 2.5rem;
-}
 </style>

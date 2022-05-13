@@ -7,7 +7,7 @@ definePageMeta({
 
 const { data, refresh, error } = await useAsyncData('user', () => $fetch('/api/user?id=Stefan-Raab'));
 let parsedUserIdArray = JSON.parse(data.value as string) as string[];
-let users = parsedUserIdArray.map(el => createUserWithID(el));
+let users = ref(parsedUserIdArray.map(el => createUserWithID(el)));
 
 const roundCookie = useCookie("round");
 if (!roundCookie.value) roundCookie.value = "1";
@@ -15,7 +15,7 @@ if (!roundCookie.value) roundCookie.value = "1";
 setInterval(() => {
   refresh();
   parsedUserIdArray = JSON.parse(data.value as string) as string[];
-  users = parsedUserIdArray.map(el => createUserWithID(el))
+  users.value = parsedUserIdArray.map(el => createUserWithID(el))
 }, 5000);
 
 function forward() {
@@ -33,24 +33,31 @@ function overview() {
       <Title>Bacchus 2022 - Manageransicht</Title>
     </Head>
 
-    <ManageUsers :users="users" />
+    <ManageRegister v-if="roundCookie == '1'" />
 
     <section v-if="parseInt(roundCookie) < 6">
-      <h3>Nächste Runde</h3>
+      <h2>Nächste Runde</h2>
       <p>Die nächste Runde ist die {{ roundCookie }}. Runde</p>
 
       <button @click="forward">
         Runde {{ roundCookie }} starten
       </button>
     </section>
-
     <section v-else>
-      <h3>Gesamtübersicht</h3>
+      <h2>Gesamtübersicht</h2>
       <p>Alle Runden wurden abgeschlossen. Du kannst nun die Gesamtwertung anzeigen</p>
       
       <button @click="overview">
         Gesamtübersicht anzeigen
       </button>
     </section>
+
+    <ManageUsers :users="users" />
   </div>
 </template>
+
+<style scoped>
+section {
+  margin: 4rem 0;
+}
+</style>
