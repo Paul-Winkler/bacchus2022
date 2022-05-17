@@ -42,6 +42,9 @@ for (let i = 0; i < discounterCounts.length; ++i) {
 let dicounterAll = discounterCounts.reduce((pv, cv) => pv + cv, 0);
 let premiumAll = premiumCounts.reduce((pv, cv) => pv + cv, 0);
 
+dicounterAll -= discounterCounts[0];
+premiumAll -= premiumCounts[0];
+
 const chartData = {
   labels: [ 'Discounterwein', 'Winzerwein'],
   datasets: [{ 
@@ -89,6 +92,13 @@ onMounted(() => ready.value = true);
 </template>
 
 <style scoped>
+.center {
+  /* position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); */
+}
+
 .all-results {
   margin: 2rem auto;
 }

@@ -1,42 +1,49 @@
-# Nuxt 3 Minimal Starter
+# Webportal Bacchus 2022
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+Die Webseite wurde für das jährliche Treffen der Bacchusfreunde Günzburg (nicht eingetragener Verein) im Jahr 2022 entwickelt.
 
-## Setup
 
-Make sure to install the dependencies:
+<br>
 
-```bash
-# yarn
-yarn install
+## Funktionsweise
 
-# npm
-npm install
+Mit der Webseite können die Teilnehmer des Events einen Account erstellen und mit diesem an Umfragen über die verkosteten Weine teilnehmen.
 
-# pnpm
-pnpm install --shamefully-hoist
-```
+Hierfür wurden immer zwei Weine blind verkostet, wobei es sich um einen hochwertigen und einen billigen Wein handelte, und anschließend wählten die Nutzer den Wein aus, der ihnen besser geschmeckt hat. Nach jeder Verkostung wurden die Ergebnisse an einem Beamer präsentiert.
 
-## Development Server
+Zum Ende des Events wurde eine Gesamtauswertung erstellt, welche zeigte, ob insgesamt die teureren oder billigeren Weine den Teilnehmern besser geschmeckt haben.
 
-Start the development server on http://localhost:3000
+Die Nutzer konnten zusätzlich sehen, ob sie sich öfter für einen billige oder hochwertigen Wein entschieden haben.
 
-```bash
-npm run dev
-```
+<br>
 
-## Production
+## Eindrücke von der Webseite
 
-Build the application for production:
+<img src="README/welcome-page.png" alt="Willkommensansicht">
+Die Willkommens Seite
 
-```bash
-npm run build
-```
+<br>
+<img src="README/login-page.png" alt="Einlogansicht">
+Die Login Seite
 
-Locally preview production build:
+<br>
+<img src="README/result-page.png" alt="Ergebnisansicht">
+Die Ergebnis Seite
 
-```bash
-npm run preview
-```
+<br>
+<img src="README/personal-view.jpg" alt="Persönliche Ansicht - Übersicht" width="200"/>
+<img src="README/personal-result.jpg" alt="Persönliche Ansicht - Ergebnis" width="200"/>
+<br>
+Die persönliche Ansicht
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+
+<br>
+
+## Eindrücke des Abends
+
+<img src="README/round.jpg" alt="Runde während der Weinverkostung">
+Runde während der Weinverkostung
+
+<br>
+<img src="README/round-final.jpg" alt="Ergebnisse der Runde">
+Die Ergebnisse der Runde

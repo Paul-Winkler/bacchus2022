@@ -16,5 +16,5 @@ export default defineNuxtConfig({
     css: [
         "~/assets/styling/base.css"
     ],
-    target: 'server'
+    target: 'server',
 })

@@ -61,21 +61,22 @@ function updateChartData() {
   }
 }
 
-let yellowIsPremium: boolean | undefined;
+let yellowIsPremium = ref<boolean | undefined>(undefined);
 let premiumWine: Wine | undefined;
 let discounterWine: Wine | undefined;
 
 function revealWines() {
   if (contentID.value == 0) {
-    yellowIsPremium = round.value.yellow.price > round.value.blue.price;
-
-    if (yellowIsPremium) {
+    yellowIsPremium.value = round.value.yellow.price > round.value.blue.price;
+    
+    if (yellowIsPremium.value) {
       chartData.value.labels = ["Winzerwein", "Discounterwein"];
       chartData.value.datasets[0].backgroundColor = ["#2ECC40", "#FF851B"];
         
       premiumWine = round.value.yellow;
       discounterWine = round.value.blue
     } else {
+      console.log("This is two");
       chartData.value.labels = ["Discounterwein", "Winzerwein"];
       chartData.value.datasets[0].backgroundColor = ["#FF851B", "#2ECC40"];
       premiumWine = round.value.blue;
@@ -143,7 +144,7 @@ function revealWines() {
       <div class="wine-two"  v-if="contentID >= 1">
         <div class="title">
           <img src="~/assets/images/wine-bottle-blue.png" alt="Wine Bottle Icon" class="icon">
-          <h3>{{ !yellowIsPremium ?  "Winzerwein" : "Discounterwein" }}</h3>
+          <h3>{{ yellowIsPremium ?  "Discounterwein" : "Winzerwein" }}</h3>
           <img :src="`/img/round-${roundID}/blue.png`" alt="Wine Bottle Icon" height="100">
         </div>
 

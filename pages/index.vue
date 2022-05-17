@@ -18,7 +18,7 @@ definePageMeta({
       </template>
       <template #heading>Anmelden</template>
 
-      Zu Beginn melden sich alle Teilnehmer mit ihren Daten an. Dafür werden Ihr Name und ein Pseudonym benötigt.
+      Zu Beginn melden sich alle Teilnehmer mit ihren Daten an. Bitte geben Sie hierfür Ihren Vornamen und Nachnamen an.
     </WelcomeInfo>
 
     <WelcomeInfo>
@@ -27,7 +27,7 @@ definePageMeta({
       </template>
       <template #heading>Weine verkosten</template>
 
-      Anschließend werden in mehreren Runden je zwei Weine verkostet. Versucher Sie herauszufinden, welcher Wein der Teurere ist.
+      Anschließend werden in mehreren Runden je zwei Weine verkostet. Merken Sie sich, welcher Wein Ihnen besser schmeckt.
     </WelcomeInfo>
 
     <WelcomeInfo>
@@ -36,7 +36,7 @@ definePageMeta({
       </template>
       <template #heading>Abstimmen</template>
       
-      Nach der Verkostung wird abgestimmt. Für das richtige Zuordnen eines Weines erhält man Punkte.
+      Nach der Verkostung wird abgestimmt. Stimmen Sie für den Wein, der Ihnen besser geschmeckt hat.
     </WelcomeInfo>
 
     <WelcomeInfo>
@@ -45,7 +45,7 @@ definePageMeta({
       </template>
       <template #heading>Auswertung</template>
       
-      Sobald über alle Weine abgestimmt wurde, wird eine Bestenliste erstellt.
+      Sobald über alle Weine abgestimmt wurde, wird eine Auswertung erstellt.
     </WelcomeInfo>
 
     <section id="continue">
